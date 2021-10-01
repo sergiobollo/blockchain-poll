@@ -6,7 +6,7 @@ export interface Poll {
     thumbnail: string;
 }
 
-export interface VOter {
+export interface Voter {
     id: string;
     voted: number[];
 }
