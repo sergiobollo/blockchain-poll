@@ -17,6 +17,12 @@ export class AppComponent {
 
   }
 
+  ngOnInit(): void {
+    this.ps.onEvent("PollCreated").subscribe(() => {
+      this.polls = this.ps.getPolls();
+    });
+  }
+
   setActivePoll(poll) {
     this.activePoll = null;
     setTimeout(() => {
