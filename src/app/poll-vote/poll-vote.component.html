@@ -1,3 +1,7 @@
+<div *ngIf="!showQuestion">
+  <h3>Espere a que se procese su voto</h3>
+</div>
+<div *ngIf="showQuestion">
 <h3>{{ question }}</h3>
 
 <form *ngIf="!voted" [formGroup]="voteForm" (ngSubmit)="submitForm()">
@@ -21,3 +25,4 @@
 </form>
 
 <div *ngIf="voted" id="poll-results"></div>
+</div>

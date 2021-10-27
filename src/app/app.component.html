@@ -7,6 +7,9 @@
   >
     Create Poll
   </button>
+  <button type="button" class="btn btn-secondary m-3" (click)="loadPolls()">
+    Load Polls
+  </button>
 </nav>
 
 <section class="jumbotron bg-light text-center">
@@ -29,6 +32,37 @@
       [pollImage]="poll.thumbnail"
       (click)="setActivePoll(poll)"
     ></app-poll>
+    <div>
+      <h6>Instrucciones</h6>
+      <ol>
+        <li>
+          <small>
+          Loguearse a <b>Metamask</b> para acceder a la Blockchain
+        </small>
+        </li>
+        <li>
+          <small>
+          Presionar <b>Load Polls</b> para cargar encuestas ya creadas
+        </small>
+        </li>
+        <li>
+          <small>
+          Presionar <b>Create Poll</b> para crear nuevas encuestas
+        </small>
+        </li>
+        <li>
+          <small>
+            Clickear una <b>encuesta</b> para desplegar las opciones y votar
+        </small>
+        </li>
+        <li>
+          <small>
+          Volver a clickear la <b>encuesta</b> para ver los resultados
+        </small>
+        </li>
+      </ol>
+
+    </div>
   </div>
   <div class="container poll-detail">
     <app-poll-vote

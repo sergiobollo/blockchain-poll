@@ -12,7 +12,7 @@ declare var window: any;
 export class Web3Service {
   private web3: Web3;
   private contract: Contract;
-  private contractAddress = '0xAc781ab955f6D0ff85bb7E6E50Eb20F6EC1F4D86';
+  private contractAddress = '0xaBbAfDb2B49f650898c87Bb66B203269f0bD69B4';
 
   constructor(private zone: NgZone) {
     if (typeof window.ethereum !== 'undefined') {
@@ -24,7 +24,7 @@ export class Web3Service {
         console.log(err);
       })
     } else {
-      console.warn('No se haencontrado Metamask. Instale o habilite Metamask');
+      console.warn('No se ha encontrado Metamask. Instale o habilite Metamask');
     }
   }
 
@@ -51,7 +51,6 @@ export class Web3Service {
             payload: data.returnValues
           });
         })
-
       });
     });
   }

@@ -10,6 +10,7 @@ import { Poll, PollForm, PollVote } from './types';
 export class AppComponent {
   showForm = false;
   activePoll: Poll = null;
+  showPolls: boolean;
 
   polls = this.ps.getPolls()
 
@@ -20,6 +21,9 @@ export class AppComponent {
   ngOnInit(): void {
     this.ps.onEvent("PollCreated").subscribe(() => {
       this.polls = this.ps.getPolls();
+    });
+    this.ps.onEvent("PollVoted").subscribe(() => {
+      location.reload();
     });
   }
 
@@ -36,5 +40,9 @@ export class AppComponent {
 
   handlePollVote(pollVoted: PollVote) {
     this.ps.vote(pollVoted.id, pollVoted.vote);
+  }
+
+  loadPolls() {
+    location.reload();
   }
 }

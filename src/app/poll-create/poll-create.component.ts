@@ -10,6 +10,7 @@ import { PollForm } from '../types';
 })
 export class PollCreateComponent {
   pollForm: FormGroup;
+  showForm: boolean = true;
 
   @Output() pollCreated: EventEmitter<PollForm> = new EventEmitter();
 
@@ -34,6 +35,7 @@ export class PollCreateComponent {
       ]
     }
     this.pollCreated.emit(formData);
+    this.showForm = false;
   }
 
 }

@@ -13,6 +13,19 @@
 		"type": "event"
 	},
 	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "_pollId",
+				"type": "uint256"
+			}
+		],
+		"name": "PollVoted",
+		"type": "event"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "string",

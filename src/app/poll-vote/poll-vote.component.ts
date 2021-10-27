@@ -18,6 +18,7 @@ export class PollVoteComponent implements AfterViewInit {
   @Output() pollVoted: EventEmitter<PollVote> = new EventEmitter();
 
   voteForm: FormGroup;
+  showQuestion: boolean = true;
 
   constructor(private fb: FormBuilder) {
     this.voteForm = this.fb.group({
@@ -37,6 +38,7 @@ export class PollVoteComponent implements AfterViewInit {
       vote: this.voteForm.get('selected').value
     }
     this.pollVoted.emit(pollVoted);
+    this.showQuestion = false;
   }
 
   generateChart() {
